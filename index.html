@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Koemlang Va — Portfolio | Web Developer, Python & Java Developer, UX/UI Designer" />
+    <link rel="icon" type="image/x-icon" href="assets/image/award.png" />
+    <title>Lang_Portfolio</title>
+
+    <!-- Google Fonts (preconnect for speed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- AOS – Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loader" id="loader"><span>Loading...</span></div>
+
+    <!-- ===== PARTICLE CANVAS ===== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#home" data-kh="Portfolio-ឡាង">LANG-Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav ms-auto me-3">
+            <li class="nav-item"><a class="nav-link active-link" href="#home" data-kh="ទំព័រដើម">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about" data-kh="អំពីខ្ញុំ">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills" data-kh="ជំនាញ">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experiences" data-kh="បទពិសោធន៍">Experiences</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact" data-kh="ទំនាក់ទំនង">Contact</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-2">
+            <button onclick="toggleLang()" class="theme-toggle" aria-label="Toggle language" title="English / ភាសាខ្មែរ">
+              <span id="langIcon">🌐</span>
+            </button>
+            <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
+              <span id="themeIcon">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="container hero justify-content-center px-2">
+      <div class="row align-items-center g-5 pt-5">
+        <div class="col-md-6 text-center" data-aos="fade-right" data-aos-duration="900">
+          <img src="assets/image/profile-1.PNG" alt="Koemlang Va" class="profile" />
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+          <h1 data-kh="សួស្តី ខ្ញុំឈ្មោះ <span class='gradient-text'><br><br>វ៉ា គឹមឡាង</span>">Hello, I'm <span class="gradient-text">Koemlang Va</span></h1>
+          <p class="lead-text" data-kh="ស្វាគមន៍មកកាន់ Portfolio របស់ខ្ញុំ! ខ្ញុំជាអ្នកអភិវឌ្ឍគេហទំព័រដែលចូលចិត្តបង្កើតគេហទំព័រដែលស្រស់ស្អាត និងមានមុខងារប្រើប្រាស់ច្រើន។ ខ្ញុំសង្ឃឹមថាអ្នកនឹងចូលចិត្តក្នុងការរកមើលកិច្ចការរបស់ខ្ញុំ!">
+            Welcome to my portfolio! I'm a passionate web developer who loves creating beautiful and functional websites. I hope you enjoy browsing my work!
+          </p>
+          <div class="typing-wrapper">
+            <span class="typing-label" data-kh="ខ្ញុំជា">I am a </span><span class="typing"></span><span class="cursor-blink"></span>
+          </div><br>
+          <a href="#contact" class="btn-hero border-0 px-4">
+            <span data-kh="ទាក់ទងខ្ញុំ">Contact Me</span> <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="container justify-content-center px-2">
+      <div class="text-center reveal">
+        <h2 class="section-title mb-4 py-2" data-kh="អំពីខ្ញុំ">About Me</h2>
+        <p class="desc" data-kh="អ្នកអាចស្គាល់ខ្ញុំបន្ថែម! ខ្ញុំកើតនៅប្រទេសកម្ពុជា។ ខ្ញុំបានចាប់ផ្តើមដំណើររបស់ខ្ញុំតាំងពីសាលាបឋមសិក្សា ជាមួយនឹងចំណង់ចំណូលចិត្តខ្លាំងក្លាចំពោះបច្ចេកវិទ្យា និងការដោះស្រាយបញ្ហា។ ការអភិវឌ្ឍគេហទំព័រគឺជាចំណង់ចំណូលចិត្តរបស់ខ្ញុំ។">
+          Get to know me better! I was born and raised in Cambodia. I started my journey from primary school with a strong interest in technology and problem-solving. Web development is my passion.
+        </p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="about-card">
+            <img class="img-fluid rounded-1 mb-1" src="assets/image/Norton.jpg" alt="Norton University" />
+            <h5 data-kh="សកលវិទ្យាល័យន័រតុន">Norton University</h5>
+            <span data-kh="ការអភិវឌ្ឍកម្មវិធី<br />២០២២ – ២០២៧">Software Development<br />2022 – 2027</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-card">
+            <img class="img-fluid rounded-1 mb-1" src="assets/image/HighSchool.jpg" alt="KhsachKandal HighSchool" style="object-position: 0px -20px;" />
+            <h5 data-kh="វិទ្យាល័យខ្សាច់កណ្តាល">KhsachKandal HighSchool</h5>
+            <span data-kh="២០២០ – ២០២២<br />បញ្ចប់ការសិក្សា ២០២២">2020 – 2022<br />Graduate 2022</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-card">
+            <img class="img-fluid rounded-1 mb-1" src="assets/image/secondar_school.jpg" alt="Sihanoukville SecondarySchool" />
+            <h5 data-kh="អនុវិទ្យាល័យព្រះសីហនុរាជ">Sihanoukville Royal Secondary School</h5>
+            <span data-kh="២០១៧ – ២០១៩">2017 – 2019</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-card">
+            <img class="img-fluid rounded-1 mb-1" src="assets/image/primaryschool.jpg" alt="PrekTaMark PrimarySchool" style="object-position: 0px -20px;" />
+            <h5 data-kh="សាលាបឋមសិក្សាព្រែកតាម៉ាក់">PrekTaMark PrimarySchool</h5>
+            <span data-kh="២០១១ – ២០១៦">2011 – 2016</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="container justify-content-center px-2">
+      <div class="text-center reveal">
+        <h2 class="section-title py-2" data-kh="ជំនាញរបស់ខ្ញុំ">My Skills</h2>
+      </div>
+      <div class="text-center mb-4 mt-5 gap-3 d-flex justify-content-center flex-wrap">
+        <button onclick="filter('all')" class="filter-btn active-filter"><span data-kh="ទាំងអស់">All</span></button>
+        <button onclick="filter('web')" class="filter-btn"><span data-kh="គេហទំព័រ">Web</span></button>
+        <button onclick="filter('python')" class="filter-btn"><span data-kh="ភាសា Python">Python</span></button>
+        <button onclick="filter('ux/ui')" class="filter-btn"><span data-kh="រចនា UX/UI">UX/UI</span></button>
+        <button onclick="filter('ai')" class="filter-btn"><span data-kh="បញ្ញាសិប្បនិម្មិត AI">AI</span></button>
+        <button onclick="filter('google')" class="filter-btn"><span data-kh="វេទិកាហ្គូហ្គល">Google Platform</span></button>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 project-item web active" data-aos="zoom-in" data-aos-delay="0">
+          <div class="project-card">
+            <div class="card-img">
+              <img src="assets/image/Web_frontend.png" alt="Web Frontend" style="object-position: 0px -35px;" />
+            </div>
+            <div class="p-3">
+              <h5 data-kh="គេហទំព័រ Frontend">Web Frontend</h5>
+              <p data-kh="បង្កើតចំណុចប្រទាក់គេហទំព័រដែលមានភាពឆ្លើយតប និងអន្តរកម្មដោយប្រើ HTML, CSS, JavaScript និង Bootstrap5។">Creating responsive and interactive web interfaces using HTML, CSS, JavaScript, and Bootstrap5.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 project-item python active" data-aos="zoom-in" data-aos-delay="100">
+          <div class="project-card">
+            <div class="card-img">
+              <img src="assets/image/Python.png" alt="Python Programming" style="object-position: 0px -20px;" />
+            </div>
+            <div class="p-3">
+              <h5 data-kh="ភាសា Python">Python Programming</h5>
+              <p data-kh="មានបទពិសោធន៍ក្នុងការអភិវឌ្ឍ Python រួមទាំងការអភិវឌ្ឍគេហទំព័រជាមួយ AI ដោយប្រើ Flask និងការវិភាគទិន្នន័យ។">Experienced in Python development with AI use flask and data analysis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 project-item ux/ui active" data-aos="zoom-in" data-aos-delay="100">
+          <div class="project-card">
+            <div class="card-img">
+              <img src="assets/image/UI-UX-logo.png" alt="UX/UI Design" style="object-position: 0px 0px;" />
+            </div>
+            <div class="p-3">
+              <h5 data-kh="រចនា UX/UI">UX/UI</h5>
+              <p data-kh="មានបទពិសោធន៍ក្នុងការរចនាចំណុចប្រទាក់អ្នកប្រើជាមួយ Figma និងកែលម្អបទពិសោធន៍អ្នកប្រើតាមរយៈការសាកល្បងប្រើប្រាស់ និងការស្រាវជ្រាវអ្នកប្រើ។">Experience designing user interfaces with Figma and improving user experience through usability testing and user research.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 project-item ai active" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-card">
+            <div class="card-img">
+              <img src="assets/image/AI_logo.jpg" alt="Artificial Intelligence" style="object-position: 0px 0px -20px 0px;" />
+            </div>
+            <div class="p-3">
+              <h5 data-kh="បញ្ញាសិប្បនិម្មិត AI">AI</h5>
+              <p data-kh="មានបទពិសោធន៍ជាមួយបច្ចេកវិទ្យាបញ្ញាសិប្បនិម្មិត។ ហើយប្រើវេទិកា AI ច្រើនលើគេហទំព័រដើម្បីគាំទ្រជាជំនួួយដល់ការសិក្សា និងការងារ។">Experience with artificial intelligence. And use many platform ai on website for support study and work.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 project-item google active" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-card">
+            <div class="card-img">
+              <img src="assets/image/Google.jpg" alt="Google" />
+            </div>
+            <div class="p-3">
+              <h5>Google</h5>
+              <p data-kh="មានបទពិសោធន៍ជាមួយវេទិកា Google (Google Docs, Google Sheet, Google Slide, Google Form)។">Experience with Google platform(Google Docs, Google Sheet, Google Slide, Google Form).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCES ===== -->
+    <section id="experiences" class="container experience-section justify-content-center px-2">
+      <div class="text-center reveal">
+        <h2 class="section-title mb-5 pt-5 py-2" data-kh="បទពិសោធន៍ធ្វើការ">Experiences</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5><i class="fas fa-brain me-2"></i><span data-kh="វិស្វករម៉ាស៊ីនរៀន">Machine Learning Engineer</span></h5>
+            <a href="https://www.digitaldividedata.com/" target="_blank" rel="noopener noreferrer">
+              Digital Divide Data Cambodia <span data-kh="| មិនា ២០២៤ – មេសា ២០២៥">| June 2024 – April 2025</span>
+            </a>
+            <p data-kh="ចូលរួមជាមួយ Digital Divide Data Cambodia ក្នុងតួនាទីជា Labeler Machine Learning ដោយធ្វើការអភិវឌ្ឍ និងដាក់កម្មវិធីម៉ាស៊ីនរៀនឲ្យដំណើរការនៅលើប្រព័ន្ធផ្សព្វផ្សាយ។">
+              Joined Digital Divide Data Cambodia as a Labeler Machine Learning, working on developing and deploying machine learning models for production use.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5><i class="fas fa-phone-alt me-2"></i><span data-kh="ភ្នាក់ងារខលប្រមូលប្រាក់">Call Collection Agent</span></h5>
+            <a href="https://www.lolc.com.kh/" target="_blank" rel="noopener noreferrer">
+              LOLC Microfinance PLC <span data-kh="| មិថុនា ២០២៥ – បច្ចុប្បន្ន">| June 2025 – Present</span>
+            </a>
+            <p data-kh="ចូលរួមជាមួយ LOLC Microfinance ក្នុងតួនាទីជាភ្នាក់ងារប្រមូលប្រាក់ ទទួលខុសត្រូវចំពោះការទាក់ទងអតិថិជនដើម្បីប្រមូលការបង់ប្រាក់កម្ចីយ៉ាងមានប្រសិទ្ធភាព។">
+              Joined LOLC Microfinance as a Call Collection Agent, responsible for contacting customers to collect loan payments efficiently.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="container justify-content-center px-2">
+      <div class="text-center reveal">
+        <h2 class="section-title mt-5 py-2" data-kh="ទាក់ទងខ្ញុំ">Contact Me</h2>
+      </div>
+      <div class="row g-4 mt-4 align-items-center">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="contact-box d-flex flex-column gap-3">
+            <h4 data-kh="អាចទាក់ទងខ្ញុំ" class="py-3">Let's Connect</h4>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:koemlangva@gmail.com" class="text-decoration-none">
+                <i class="fas fa-envelope"></i> koemlangva@gmail.com
+              </a>
+              <a href="tel:+855965718125" class="text-decoration-none">
+                 <i class="fas fa-phone"></i> +855 965-718-125
+              </a>
+            </div>
+            <p class="social-label mb-1" data-kh="បណ្ដាញសង្គម">Social Media</p>
+            <div class="link d-flex flex-wrap gap-2">
+              <a class="text-decoration-none" href="https://www.facebook.com/koemlangz" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+              <a class="text-decoration-none" href="https://t.me/koemlangz" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram"></i> Telegram
+              </a>
+              <a class="text-decoration-none" href="https://www.instagram.com/koemlangz" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+              <a class="text-decoration-none" href="https://www.linkedin.com/in/va-koemlang-0a1985362/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center" data-aos="fade-left" data-aos-duration="800">
+          <div class="contact-box">
+            <h4 data-kh="ផ្ញើសារដល់ខ្ញុំ" class="py-3">Let's Message</h4>
+            <form action="" method="get">
+              <div class="mb-3">
+                <input type="text" class="form-control" data-ph-en="Your Name" data-ph-kh="ឈ្មោះរបស់អ្នក" placeholder="Your Name" required />
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" data-ph-en="Your Email" data-ph-kh="អ៊ីមែលរបស់អ្នក" placeholder="Your Email" required />
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="4" data-ph-en="Your Message" data-ph-kh="សាររបស់អ្នក" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn-hero border-0 px-2">
+                  <span data-kh="ចុចបញ្ជូន">Submit</span> <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer justify-content-center px-2">
+      <div class="container text-center">
+        <p>
+          <span class="footer-brand" data-kh="Portfolio-ឡាង">Lang-Portfolio</span> &nbsp;&middot;&nbsp;
+          &copy; 2026 Koemlang Va. <span data-kh="រក្សាសិទ្ធិគ្រប់យ៉ាង។">All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      /* ---- AOS Init ---- */
+      AOS.init({ once: true, duration: 700 });
+
+      /* ---- Preloader ---- */
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+      });
+
+      /* ---- Language Toggle (EN ↔ KH) ---- */
+      let isKhmer = false;
+      const khTypedStrings = ['អ្នកអភិវឌ្ឍគេហទំព័រ', 'អ្នកអភិវឌ្ឍ Python', 'អ្នកអភិវឌ្ឍបញ្ញាសិប្បនិម្មិត', 'អ្នករចនាផ្នែក UX/UI', 'អ្នកប្រើវេទិកាហ្គូហ្គល'];
+      const enTypedStrings = ['Web Developer', 'Python Developer', 'AI Junior', 'UX/UI Designer', 'Google Platform User'];
+      let typedInstance = null;
+
+      function toggleLang() {
+        isKhmer = !isKhmer;
+        document.documentElement.lang = isKhmer ? 'km' : 'en';
+        localStorage.setItem('lang', isKhmer ? 'kh' : 'en');
+
+        // Update all translatable text
+        document.querySelectorAll('[data-kh]').forEach(el => {
+          const kh = el.getAttribute('data-kh');
+          if (!kh) return;
+          if (isKhmer) {
+            el.setAttribute('data-en', el.innerHTML);
+            el.innerHTML = kh;
+          } else {
+            const en = el.getAttribute('data-en');
+            if (en) el.innerHTML = en;
+          }
+        });
+
+        // Update form placeholders
+        document.querySelectorAll('[data-ph-en]').forEach(el => {
+          el.placeholder = isKhmer ? el.getAttribute('data-ph-kh') : el.getAttribute('data-ph-en');
+        });
+
+        // Recreate Typed.js with correct language strings
+        if (typedInstance) typedInstance.destroy();
+        const typingEl = document.querySelector('.typing');
+        typedInstance = new Typed(typingEl, {
+          strings: isKhmer ? khTypedStrings : enTypedStrings,
+          typeSpeed: isKhmer ? 60 : 80,
+          backSpeed: isKhmer ? 60 : 100,
+          backDelay: 1800,
+          loop: true,
+        });
+      }
+
+      // Restore saved language
+      if (localStorage.getItem('lang') === 'kh') {
+        toggleLang(); // Will switch to Khmer
+      } else {
+        // Init Typed.js in English (default)
+        typedInstance = new Typed('.typing', {
+          strings: enTypedStrings,
+          typeSpeed: 80,
+          backSpeed: 100,
+          backDelay: 1800,
+          loop: true,
+        });
+      }
+
+      /* ---- Skill Filter ---- */
+      function filter(type) {
+        const items = document.querySelectorAll('.project-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        buttons.forEach(btn => btn.classList.remove('active-filter'));
+        event.target.classList.add('active-filter');
+
+        items.forEach(el => {
+          el.classList.remove('active');
+          if (type === 'all' || el.classList.contains(type)) {
+            setTimeout(() => el.classList.add('active'), 50);
+          }
+        });
+      }
+
+      /* ---- Theme Toggle ---- */
+      function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const icon = document.getElementById('themeIcon');
+        icon.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+      }
+      // Restore saved theme
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        document.getElementById('themeIcon').textContent = '☀️';
+      }
+
+      /* ---- Navbar scroll effect & active link highlight (THROTTLED) ---- */
+      const navbar = document.getElementById('mainNav');
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      let ticking = false;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            // Navbar background on scroll
+            if (window.scrollY > 50) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+
+            // Active section highlight
+            let current = '';
+            sections.forEach(section => {
+              const top = section.offsetTop - 120;
+              if (window.scrollY >= top) {
+                current = section.getAttribute('id');
+              }
+            });
+            navLinks.forEach(link => {
+              link.classList.remove('active-link');
+              if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active-link');
+              }
+            });
+
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      /* ---- Scroll Reveal (IntersectionObserver – lightweight) ---- */
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      /* ---- Particle Background (OPTIMIZED) ---- */
+      (function initParticles() {
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const PARTICLE_COUNT = 35; // Reduced from 60
+        const CONNECTION_DIST = 120; // Slightly reduced
+        const CONNECTION_DIST_SQ = CONNECTION_DIST * CONNECTION_DIST; // Avoid sqrt
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        resize();
+
+        // Debounced resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(resize, 150);
+        });
+
+        class Particle {
+          constructor() {
+            this.reset();
+          }
+          reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.35;
+            this.speedY = (Math.random() - 0.5) * 0.35;
+            this.opacity = Math.random() * 0.4 + 0.1;
+          }
+          update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+          }
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(6, 214, 160, ${this.opacity})`;
+            ctx.fill();
+          }
+        }
+
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          particles.push(new Particle());
+        }
+
+        function connectParticles() {
+          for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              // Quick early-exit check (no sqrt needed)
+              if (Math.abs(dx) > CONNECTION_DIST) continue;
+              const dy = particles[i].y - particles[j].y;
+              if (Math.abs(dy) > CONNECTION_DIST) continue;
+              const distSq = dx * dx + dy * dy;
+              if (distSq < CONNECTION_DIST_SQ) {
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(6, 214, 160, ${0.06 * (1 - distSq / CONNECTION_DIST_SQ)})`;
+                ctx.lineWidth = 0.5;
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
+              }
+            }
+          }
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => {
+            p.update();
+            p.draw();
+          });
+          connectParticles();
+          requestAnimationFrame(animate);
+        }
+        animate();
+      })();
+    </script>
+  </body>
+</html>
